@@ -23,7 +23,7 @@ Thus, my first approach. I will acknowledge that I was a bit concerned about the
 
 Debugging this turned out to be extremely challenging. You'd find yourself in infinite loops where, in order to get into the debugger at the right point to inspect the current structures, you'd need to describe exceedingly narrow conditions. As a result, you'd often end up missing them and just looping. And iterating manually through to the point where your logic failed would sometimes require stepping hundreds of times.
 
-I'd originally planned to format the output in a nested fashion, making it clear which elements were present within children of which. Something like:
+I'd originally planned to format the output in a nested fashion, making it clear which elements were present as children of other elements. Something like:
 
 
     http://www.fakesite.com
