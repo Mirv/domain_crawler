@@ -1,4 +1,4 @@
-Crawling a Website, Or: How Hard Could it Be?
+## Crawling a Website, Or: How Hard Could it Be?
 
 The answer is evident in the amount of hair, plucked from my head, currently surrounding my feet. I've a new-found respect for designers who create robust, flexible and efficient web crawling software. Even on a simple-seeming WordPress site, the sheer depth of linkage astounded me.
 
