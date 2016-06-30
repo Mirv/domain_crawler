@@ -22,7 +22,7 @@ class DomainCrawler
         Nokogiri::HTML(site_html).traverse do |node|
           node = node.to_s.match(/(https?:\/\/.+?)\"/)
           if node  
-            node = node_to_string(node)
+            node = node[0].gsub("\"", "").strip
             elements << node
             puts "Traversing node: #{node}" if node_traversible?(node)
             # I left this in as a bit of a sanity check for the user, as the crawl can take quite a long time.
@@ -47,11 +47,6 @@ class DomainCrawler
   end
 
   private
-
-  def node_to_string(node)
-    output_element = node[0].gsub("\"", "") # Regex is still catching the trailing "
-    output_element.strip
-  end
 
   def node_traversible?(node)
     node.start_with?(root_domain) &&
