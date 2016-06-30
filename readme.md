@@ -11,7 +11,7 @@ The email specifying this exercise came through while I was on the subway headin
 Alas, the answer to the question in the title is evident by the length of this readme. I've a new-found respect for designers who create robust, flexible and efficient web crawling software. Even on a simple-seeming WordPress site, the sheer depth of linkage astounded me.
 
 My first instinct was to use recursion. After all, at first naive blush, one might think that the process could be as follows:
- * Turn entire DOM into a string
+ * Turn the entire DOM into a string
  * Parse this string element by element, looking for 'http' to be present in each element
  * If present in element but doesn't contain the root domain, add this element to list of static content in the sitemap
  * If it contains the root domain and _is_ a traversible URL, call the inspect method recursively, sending in the current element as the new element to inspect
