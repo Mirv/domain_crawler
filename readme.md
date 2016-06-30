@@ -1,9 +1,10 @@
-## Crawling a Website, Or: How Hard Could it Be?
+# Crawling a Website, Or: How Hard Could it Be?
 
-# To Run:
+## To Run:
 
 Clone the repo down. The program can be run by typing `ruby crawl` followed by the domain to crawl, surrounded by double quotes.
 
+##
 
 The answer is evident by the amount of sleep I've not gotten. I've a new-found respect for designers who create robust, flexible and efficient web crawling software. Even on a simple-seeming WordPress site, the sheer depth of linkage astounded me.
 
