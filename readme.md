@@ -46,7 +46,7 @@ I'd originally planned to format the output in a nested fashion, making it clear
 
 And so on. However, as the magnitude of the nesting which I was coming across became clear to me (I was hitting nests 350 deep before achieving stack overflow), I realized this would be almost impossible to display visually, and so I adjusted my code for a simpler output.
 
-Finally, my code was functional to the point where I was able to start getting the dreaded stack overflow errors. I considered whether using tail-end recursion would both speed things up and prevent overflow errors, but I couldn't easily think of a way to adjust the recursive method signature in a way that would support this. So, to iteration I retreated, tail between my legs.
+Finally, my code was functional to the point where I was able to start getting the dreaded stack overflow errors. I considered whether using tail-end recursion would both speed things up and prevent overflow, but I couldn't easily think of a way to adjust the recursive method signature in a way that would support this. So, to iteration I retreated, tail between my legs.
 
 The logic was essentially the same, I just needed to keep track of nodes left to inspect and nodes I'd already inspect. But I was still running into some of the same sorts of errors, where the DOM-traversal would take forever and you simply weren't sure whether you'd fallen into a hole in your logic or not.
 
