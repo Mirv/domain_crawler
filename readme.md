@@ -4,9 +4,9 @@
 
 Clone the repo down. The program can be run by typing `ruby crawl` followed by the domain to crawl, surrounded by double quotes.
 
-##
+---
 
-The answer is evident by the amount of sleep I've not gotten. I've a new-found respect for designers who create robust, flexible and efficient web crawling software. Even on a simple-seeming WordPress site, the sheer depth of linkage astounded me.
+The answer to question in the title is evident by the length of this readme. I've a new-found respect for designers who create robust, flexible and efficient web crawling software. Even on a simple-seeming WordPress site, the sheer depth of linkage astounded me.
 
 My first instinct was to use recursion. After all, at first naive blush, one might think that the process could be as follows:
  * Turn entire DOM into a string
