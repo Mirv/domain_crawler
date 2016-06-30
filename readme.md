@@ -6,7 +6,7 @@ Clone the repo down. The program can be run by typing `ruby crawl` followed by t
 
 ---
 
-The email specifying this exercise came through while I was on the subway heading home. I spent the rest of the ride thinking it through, taking notes on my phone, and by the time I arrived, felt like I had a pretty good grasp on how to proceed.
+The email describing this exercise came through while I was on the subway heading home. I spent the rest of the ride thinking it through, taking notes on my phone, and by the time I arrived, felt like I had a pretty good grasp on how to proceed.
 
 Alas, the answer to the question in the title is evident by the length of this readme. I've a new-found respect for designers who create robust, flexible and efficient web crawling software. Even on a simple-seeming WordPress site, the sheer depth of linkage astounded me.
 
