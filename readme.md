@@ -24,8 +24,11 @@ Debugging this turned out to be extremely challenging. You'd find yourself in in
 I'd originally planned to format the output in a nested fashion, making it clear which elements were present within children of which. Something like:
 
 `http://www.fakesite.com
+
 http://www.fakesite.com/posts
+
     http://www.fakesite.com/posts/1
+    
     http://www.fakesite.com/posts/2
     http://www.fakesite.com/posts/3
         http://www.fakesite.com/posts/3/comments
