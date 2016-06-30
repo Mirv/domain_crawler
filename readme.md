@@ -15,7 +15,7 @@ My first instinct was to use recursion. After all, at first naive blush, one mig
  * Parse this string element by element, looking for 'http' to be present in each element's stringified description
  * If 'http' is present but the url doesn't contain the root domain, add this element to the list of static content in the sitemap
  * If it contains the root domain _and_ is a traversible URL, call the inspect method recursively, sending in the current element as the new element to inspect
- * Make really, absolutely, **totally** friggin' sure that you're keeping track of which URLs you've already visited. Infinite loops suck, and in this particular context are extremely tricky to debug.
+ * Make really, absolutely, **totally** friggin' sure that you're keeping track of which URLs you've already visited. Infinite loops really aren't fun, and in this particular context are extremely tricky to debug.
 
 Thus, my first approach. I will acknowledge that I was a bit concerned about the possibility of stack overflow if the recursion got too deep. But, I thought, it would be an interesting experiment, and if it turned out to be the case, I could always switch to an iterative method. It couldn't take that long to implement, right?
 
