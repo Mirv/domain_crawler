@@ -26,11 +26,11 @@ class DomainCrawler
           node = node_to_string(node, depth)
           elements << node unless elements.last == node  # Gives better result then just doing .uniq, as you want children to be able to display copies of the same link
           # binding.pry if node.include?(root_domain)
+          puts "Node: #{node} with depth #{depth}" if node_traversible?(node.strip)
           inspect(node.strip, depth + 1) if node_traversible?(node.strip)
         end
       end
     rescue
-      puts "Not a traversible URL"
       # Not a traversible URL
     end
 
@@ -45,7 +45,7 @@ class DomainCrawler
 
   def node_to_string(node, depth)
     output_element = node[0].gsub("\"", "") # Regex is still catching the trailing "
-    depth.times { output_element = "\t\t" + output_element }
+    # depth.times { output_element = "\t\t" + output_element }
     output_element + "\n"
   end
 
@@ -55,7 +55,8 @@ class DomainCrawler
 
 end
 
-DomainCrawler.new("http://wiprodigital.com/").inspect
+DomainCrawler.new("https://figmentums.wordpress.com").inspect
+# DomainCrawler.new("http://wiprodigital.com/").inspect
 
         # file.write("First method: #{node.to_s.match(/(http.+\.[a-zA-Z0-9]{1,4})/)[1]}\n")
         # file.write("Second method: #{node.to_s.match(/(http.+\w{1,4})/)[1]}\n\n")
