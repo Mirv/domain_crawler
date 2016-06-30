@@ -27,8 +27,8 @@ I'd originally planned to format the output in a nested fashion, making it clear
 
 
     http://www.fakesite.com
-    http://www.fakesite.com/posts
     http://www.fakesite.com/logo.jpg
+    http://www.fakesite.com/posts
         http://www.fakesite.com/logo.jpg
         http://www.fakesite.com/posts/1
         http://www.fakesite.com/posts/2
