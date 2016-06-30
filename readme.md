@@ -23,7 +23,7 @@ Debugging this turned out to be extremely challenging. You'd find yourself in in
 
 I'd originally planned to format the output in a nested fashion, making it clear which elements were present within children of which. Something like:
 
-http://www.fakesite.com
+`http://www.fakesite.com
 http://www.fakesite.com/posts
     http://www.fakesite.com/posts/1
     http://www.fakesite.com/posts/2
@@ -33,7 +33,7 @@ http://www.fakesite.com/posts
         http://www.fakesite.com/posts/4/comments
     http://www.fakesite.com/posts/5
 http://www.fakesite.com/messages
-http://www.fakesite.com/contact-us
+http://www.fakesite.com/contact-us`
 
 And so on. However, as the magnitude of the nesting which I was coming across became clear to me (I was hitting nests 350 deep before achieving stack overflow), I realized this would be almost impossible to display visually, and so I adjusted my code for a simpler output.
 
