@@ -1,6 +1,5 @@
 require "nokogiri"
 require "rest-client"
-require "pry"
 
 class DomainCrawler
   attr_accessor :root_domain
@@ -15,7 +14,7 @@ class DomainCrawler
 
   def inspect
     while !traversible_paths.empty?
-      # Catch errors/exceptions from improper URLs being sent into RestClient
+      # Catch errors/exceptions from malformed URLs being sent into RestClient
       begin 
         current_path = traversible_paths.first
         traversed_paths << current_path
@@ -35,10 +34,14 @@ class DomainCrawler
       traversible_paths.shift
     end
 
-    elements.uniq!.sort!
-    output_file = File.open("sitemap.txt", "w")
-    elements.each { |element| output_file.write(element + "\n") }
-    output_file.close
+    if elements.empty?
+      puts "Please enter a valid domain to crawl. This one returned no elements to traverse or record."
+    else
+      elements.uniq!.sort!
+      output_file = File.open("sitemap.txt", "w")
+      elements.each { |element| output_file.write(element + "\n") }
+      output_file.close
+    end
   end
 
   private
@@ -57,4 +60,4 @@ class DomainCrawler
 
 end
 
-DomainCrawler.new("https://figmentums.wordpress.com").inspect
+# DomainCrawler.new("https://figmentums.wordpress.com").inspect
