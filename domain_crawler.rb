@@ -24,7 +24,9 @@ class DomainCrawler
           if node  
             node = node_to_string(node)
             elements << node
-            puts "Node: #{node}" if node_traversible?(node)
+            puts "Traversing node: #{node}" if node_traversible?(node)
+            # I left this in as a bit of a sanity check for the user, as the crawl can take quite a long time.
+            # The intermittent console feedback lets them know something is still happening.
             traversible_paths << node if node_traversible?(node)
           end
         end
