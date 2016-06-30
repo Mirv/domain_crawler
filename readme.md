@@ -2,7 +2,11 @@
 
 ## To Run:
 
-Clone the repo down. The program can be run by typing `ruby crawl` followed by the domain to crawl, surrounded by double quotes.
+Clone the repo down.
+The program can be run by typing `ruby crawl` followed by the domain to crawl, surrounded by double quotes.
+It outputs a text file called "sitemap.txt".
+
+An example output file is saved as "demo_sitemap.txt".
 
 ---
 
