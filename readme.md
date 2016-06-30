@@ -61,6 +61,6 @@ Finally, I was able to get my run-throughs to complete. Looking at the output, i
 
 ---
 
-Despite all of this, I found this highly enjoyable and challenging. My class had, within the first week, begun building web scrapers using RestClient and Nokogiri, so this was hardly alien territory for me. However, the difficulties which cropped up during the process were very satisfying to overcome.
+Despite all of this, I found this highly enjoyable and challenging. My class had, within the first week, begun building web scrapers using RestClient and Nokogiri, so this was hardly alien territory for me. However, the difficulties which cropped up during the process were both challenging and extremely satisfying to overcome.
 
 Thanks folks!
