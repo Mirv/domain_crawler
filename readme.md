@@ -57,10 +57,10 @@ Finally, I was able to get my run-throughs to complete. Looking at the output, i
 
 ## Tradeoffs/potential inefficiencies I'm aware of:
  * I don't remove duplicate elements from the array until right before writing them to file. However, I doubt it ever approaches anywhere near the size where it would be considered a memory leak.
- * I'm not currently testing URLs for validity before passing them into RestClient, leaving that instead to my begin/rescue block. Surely not best practice, but I was rather pressed for time.
- * It's entirely possible that the large quantity of regex matching I do slows the process down, and that there are other ways to narrow down the selection without checking every single element.
- * Some of my regular expressions aren't perfect, and occasionally bad strings slip into the output, e.g. html tags are still present.
- * It's very possible that Nokogirl::HTML.traverse is inefficient, and that simply parsing a DOM string piece by piece would be better. I settled on that method before realizing how challenging this project would be, and the thought of attempting to adjust my code to try other methods by this point makes my eye twitch.
+ * I'm not currently testing URLs for validity before passing them into RestClient, leaving that instead to my begin/rescue block. Definitely not best practice.
+ * It's possible that the large amount of regex matching I do slows the process down, and that there are other ways to narrow down the selection without matching against the `to_s` of every element.
+ * My regular expression matching isn't perfect, and in a very small number of edge cases, bad strings slip into the output (e.g. html tags are still present.)
+ * It's very possible that Nokogirl::HTML.traverse is inefficient, and that simply parsing a DOM string piece by piece would be better. I settled on that method before realizing how challenging this project would be, and the thought of attempting to adjust my code to try other methods at this point makes my eyelid twitch.
 
 ---
 
