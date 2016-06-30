@@ -56,7 +56,7 @@ The logic was essentially the same, I just needed to keep track of nodes left to
 Finally, I was able to get my run-throughs to complete. Looking at the output, it appeared to be consistent with what I'd been expecting.
 
 ## Tradeoffs/potential inefficiencies I'm aware of:
- * I don't trim duplicate elements until right before writing them to file. However, I doubt it ever approaches anywhere near the size where it would be considered a memory leak.
+ * I don't remove duplicate elements from the array until right before writing them to file. However, I doubt it ever approaches anywhere near the size where it would be considered a memory leak.
  * I'm not currently testing URLs for validity before passing them into RestClient, leaving that instead to my begin/rescue block. Surely not best practice, but I was rather pressed for time.
  * It's entirely possible that the large quantity of regex matching I do slows the process down, and that there are other ways to narrow down the selection without checking every single element.
  * Some of my regular expressions aren't perfect, and occasionally bad strings slip into the output, e.g. html tags are still present.
