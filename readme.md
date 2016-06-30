@@ -27,25 +27,15 @@ I'd originally planned to format the output in a nested fashion, making it clear
 
 
     http://www.fakesite.com
-
     http://www.fakesite.com/posts
-
         http://www.fakesite.com/posts/1
-    
         http://www.fakesite.com/posts/2
-    
         http://www.fakesite.com/posts/3
-    
             http://www.fakesite.com/posts/3/comments
-        
         http://www.fakesite.com/posts/4
-    
             http://www.fakesite.com/posts/4/comments
-        
         http://www.fakesite.com/posts/5
-    
     http://www.fakesite.com/messages
-
     http://www.fakesite.com/contact-us
 
 
