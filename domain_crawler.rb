@@ -19,17 +19,13 @@ class DomainCrawler
         current_path = traversible_paths.first
         traversed_paths << current_path
         site_html = RestClient.get(current_path)
+
         Nokogiri::HTML(site_html).traverse do |node|
-          node = node.to_s.match(/(https?:\/\/.+?)\"/)
-          if node  
-            node = node[0].gsub("\"", "").strip
-            elements << node
-            puts "Node: #{node}" if node_traversible?(node)
-            traversible_paths << node if node_traversible?(node)
-          end
+          examine_node(node)
         end
+      end
       rescue
-        # Not a traversible URL
+        # Not a traversible URL, invalid for RestClient
       end
       traversible_paths.shift
     end
@@ -51,6 +47,15 @@ class DomainCrawler
     !traversed_paths.include?(node) &&
     !traversible_paths.include?(node) &&
     !node.end_with?(".php", ".js", ".xml")
+  end
+
+  def examine_node(node)
+   node = node.to_s.match(/(https?:\/\/.+?)\"/)
+   if node  
+    node = node[0].gsub("\"", "").strip
+    elements << node
+    puts "Node: #{node}" if node_traversible?(node)
+    traversible_paths << node if node_traversible?(node)
   end
 
 end
