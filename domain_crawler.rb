@@ -23,7 +23,6 @@ class DomainCrawler
         Nokogiri::HTML(site_html).traverse do |node|
           examine_node(node)
         end
-      end
       rescue
         # Not a traversible URL, invalid for RestClient
       end
@@ -50,16 +49,16 @@ class DomainCrawler
   end
 
   def examine_node(node)
-   node = node.to_s.match(/(https?:\/\/.+?)\"/)
-   if node  
-    node = node[0].gsub("\"", "").strip
-    elements << node
-    puts "Node: #{node}" if node_traversible?(node)
-    # I left this in as a bit of a sanity check for the user, as the crawl can take quite a long time.
-    # The intermittent console feedback lets them know something is still happening.
-    traversible_paths << node if node_traversible?(node)
+    node = node.to_s.match(/(https?:\/\/.+?)\"/)
+    if node  
+      node = node[0].gsub("\"", "").strip
+      elements << node
+      puts "Node: #{node}" if node_traversible?(node)
+      # I left this in as a bit of a sanity check for the user, as the crawl can take quite a long time.
+      # The intermittent console feedback lets them know something is still happening.
+      traversible_paths << node if node_traversible?(node)
+    end
   end
-
 end
 
 # DomainCrawler.new("https://figmentums.wordpress.com").inspect
