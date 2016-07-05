@@ -21,7 +21,8 @@ class DomainCrawler
         site_html = RestClient.get(current_path)
 
         Nokogiri::HTML(site_html).traverse do |node|
-          examine_node(node)
+          node = match_node_for_http(node)
+          examine_node(node) if node
         end
       rescue
         # Not a traversible URL, invalid for RestClient
@@ -32,10 +33,7 @@ class DomainCrawler
     if elements.empty?
       puts "Please enter a valid domain to crawl. This one returned no elements to traverse or record."
     else
-      elements.uniq!.sort!
-      output_file = File.open("sitemap.txt", "w")
-      elements.each { |element| output_file.write(element + "\n") }
-      output_file.close
+      output_sitemap(elements.uniq.sort)
     end
   end
 
@@ -48,16 +46,23 @@ class DomainCrawler
     !node.end_with?(".php", ".js", ".xml")
   end
 
+  def match_node_for_http(node)
+    node.to_s.match(/(https?:\/\/.+?)\"/)
+  end
+
   def examine_node(node)
-    node = node.to_s.match(/(https?:\/\/.+?)\"/)
-    if node  
-      node = node[0].gsub("\"", "").strip
-      elements << node
-      puts "Node: #{node}" if node_traversible?(node)
-      # I left this in as a bit of a sanity check for the user, as the crawl can take quite a long time.
-      # The intermittent console feedback lets them know something is still happening.
-      traversible_paths << node if node_traversible?(node)
-    end
+    node = node[0].gsub("\"", "").strip
+    elements << node
+    puts "Node: #{node}" if node_traversible?(node)
+    # I left this in as a bit of a sanity check for the user, as the crawl can take quite a long time.
+    # The intermittent console feedback lets them know something is still happening.
+    traversible_paths << node if node_traversible?(node)
+  end
+
+  def output_sitemap(sorted_elements)
+    output_file = File.open("sitemap.txt", "w")
+    sorted_elements.each { |element| output_file.write(element + "\n") }
+    output_file.close
   end
 end
 

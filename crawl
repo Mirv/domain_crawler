@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative 'domain_crawler'
 
 if ARGV[0]
