@@ -1,6 +1,5 @@
 require "nokogiri"
 require "rest-client"
-require "pry"
 
 class DomainCrawler
   attr_accessor :root_domain, :current_path
